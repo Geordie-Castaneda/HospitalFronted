@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet">
+    <title>Agregar Empleado - Hospital Central</title>
+    <style>
+
+        :root{
+            --white: #FFFFFF;
+            --black: #000000;
+            --light_blue: #007bff; /* Color azul claro */
+            --text_input_field: #F7F7F7;
+            --hospital_green: #ACD9B2; /* Color verde hospital */
+            --sm: 14px;
+            --md: 16px;
+            --lg: 18px;
+        }
+
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2; /* Color de fondo similar al blanco */
+            margin: 0;
+            padding: 0;
+        }
+
+        .hospital-navbar {
+            background-color: #ACD9B2; /* Color verde hospital */
+        }
+
+        .hospital-navbar .navbar-brand {
+            color: #fff; /* Texto blanco */
+            font-size: 24px;
+        }
+
+        .container {
+            max-width: 95%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff; /* Fondo blanco para el panel */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        h1 {
+            font-size: 24px;
+            color: #007bff; /* Color azul hospital para el encabezado */
+        }
+
+        .navbar-nav .nav-link {
+            color: #fff !important; /* Forzar el color de texto a blanco */
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #f2f2f2 !important; /* Cambiar el color del texto al pasar el cursor */
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    
+    <nav class="navbar navbar-expand-lg hospital-navbar">
+        <a class="navbar-brand" href="#">Hospital Central</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Pacientes</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Inventario de medicamentos</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Empleados</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Habitaciones disponibles</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Cerrar Sesión</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <br>
+
+    <div class="container">
+        <h1>Agregar Empleado</h1>
+        <form>
+            <div class="form-group">
+                <label for="nombre">Nombre:</label>
+                <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre del empleado" required>
+            </div>
+            <div class="form-group">
+                <label for="puesto">Puesto:</label>
+                <input type="text" class="form-control" id="puesto" name="puesto" placeholder="Puesto del empleado" required>
+            </div>
+            <div class="form-group">
+                <label for="salario">Salario:</label>
+                <input type="number" class="form-control" id="salario" name="salario" placeholder="Salario del empleado" required>
+            </div>
+            <div class="form-group">
+                <label for="telefono">Teléfono:</label>
+                <input type="tel" class="form-control" id="telefono" name="telefono" placeholder="Teléfono de contacto" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Guardar Empleado</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet">
+    <title>Habitaciones Disponibles - Hospital Central</title>
+    <style>
+        :root {
+            --white: #FFFFFF;
+            --black: #000000;
+            --red: #FF0000; /* Color rojo */
+            --yellow: #FFFF00; /* Color amarillo */
+            --green: #00FF00; /* Color verde */
+            --hospital_green: #ACD9B2; /* Color verde hospital */
+        }
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background-color: #f2f2f2; /* Color de fondo similar al blanco */
+            margin: 0;
+            padding: 0;
+        }
+
+        .hospital-navbar {
+            background-color: var(--hospital_green); /* Color verde hospital */
+        }
+
+        .hospital-navbar .navbar-brand {
+            color: var(--white); /* Texto blanco */
+            font-size: 24px;
+        }
+
+        .container {
+            max-width: 95%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: var(--white); /* Fondo blanco para el panel */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        h1 {
+            font-size: 24px;
+            color: var(--hospital_green); /* Color verde hospital para el encabezado */
+        }
+
+        .room-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .room-list-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .room-status-circle {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .room-number {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .room-type {
+            font-size: 16px;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg hospital-navbar">
+    <a class="navbar-brand" href="#">Hospital Central</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="#">Inicio</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Pacientes</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Inventario de medicamentos</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Empleados</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Habitaciones Disponibles</a>
+            </li>
+        </ul>
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="#">Cerrar Sesión</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<br>
+
+<div class="container">
+    <h1>Habitaciones Disponibles</h1>
+
+    <table class="table table-hover table-hover-pointer">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Estado</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Habitación 101</td>
+                <td>
+                    <select class="form-control" style="border-color: transparent;">
+                        <option style=" color: var(--white);" value="ocupada">Ocupada</option>
+                        <option value="reservada">Reservada</option>
+                        <option style=" color: var(--white);" value="disponible">Disponible</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Habitación 53</td>
+                <td>
+                    <select class="form-control" style="border-color: transparent;">
+                        <option style=" color: var(--white);" value="ocupada">Ocupada</option>
+                        <option value="reservada">Reservada</option>
+                        <option style=" color: var(--white);" value="disponible">Disponible</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Habitación 202</td>
+                <td>
+                    <select class="form-control" style="border-color: transparent;">
+                        <option style=" color: var(--white);" value="ocupada">Ocupada</option>
+                        <option value="reservada">Reservada</option>
+                        <option style=" color: var(--white);" value="disponible">Disponible</option>
+                    </select>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>
+
