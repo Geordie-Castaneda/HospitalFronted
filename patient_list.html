@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <title>Empleados - Hospital Central</title>
+    <title>Lista de Empleados - Hospital Central</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -26,13 +26,18 @@
             color: #fff; /* Texto blanco */
         }
 
+        .hospital-navbar .navbar-nav .nav-link:hover {
+            background-color: #007bff; /* Color azul claro al pasar el cursor */
+        }
+
         .container {
-            max-width: 800px;
-            margin: 20px auto;
+            max-width: 95%;
+            margin: 0 auto;
             padding: 20px;
             background-color: #fff; /* Fondo blanco para el panel */
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             border-radius: 10px;
+            min-height: 80vh;
         }
 
         h1 {
@@ -40,36 +45,13 @@
             color: #007bff; /* Color azul hospital para el encabezado */
         }
 
-        .employee-card {
-            background-color: #f9f9f9;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            padding: 10px;
-            margin: 10px 0;
-        }
-
-        .employee-avatar {
-            max-width: 100px;
-            max-height: 100px;
-            border-radius: 50%;
-            margin: 10px;
-        }
-
-        .employee-info {
-            margin-top: 10px;
-        }
-
-        .btn-add-employee {
-            background-color: #007bff;
-            color: #fff;
-            padding: 10px 20px;
-            border: none;
+        .table-hover-pointer tbody tr:hover {
             cursor: pointer;
         }
     </style>
 </head>
 <body>
-
+    
     <nav class="navbar navbar-expand-lg hospital-navbar">
         <a class="navbar-brand" href="#">Hospital Central</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -101,28 +83,36 @@
         </div>
     </nav>
     
+    <br>
     <div class="container">
-        <h1>Lista de Empleados</h1>
-        
-        <!-- Ejemplo de un empleado -->
-        <div class="employee-card">
-            <div class="row">
-                <div class="col-md-3">
-                    <img src="https://via.placeholder.com/100" alt="Avatar" class="employee-avatar">
-                </div>
-                <div class="col-md-9 employee-info">
-                    <h3>Nombre del Empleado</h3>
-                    <p>Cargo: Enfermera</p>
-                    <p>Teléfono: (123) 456-7890</p>
-                    <p>Email: empleado@example.com</p>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Agrega más tarjetas de empleados aquí -->
-
-        <button class="btn-add-employee">Agregar Empleado</button>
+        <h1>Lista de pacientes</h1>
+        <table class="table table-hover table-hover-pointer">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Habitación</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr onclick="location.href='employee.html'">
+                    <td>1</td>
+                    <td>John Doe</td>
+                    <td>Habitación 3</td>
+                </tr>
+                <tr onclick="location.href='employee.html'">
+                    <td>2</td>
+                    <td>Jane Smith</td>
+                    <td>Habitación 156</td>
+                </tr>
+                <tr onclick="location.href='employee.html'">
+                    <td>3</td>
+                    <td>Robert Johnson</td>
+                    <td>Habitación 99</td>
+                </tr>
+                <!-- Agrega más empleados aquí -->
+            </tbody>
+        </table>
     </div>
-
 </body>
 </html>
