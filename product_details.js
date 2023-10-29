@@ -52,20 +52,22 @@ function mostrarFormulario() {
 function guardarCambios() {
     // Aquí puedes implementar la lógica para guardar los cambios y luego mostrar la tabla nuevamente.
     // Por ejemplo, puedes enviar una solicitud al servidor para actualizar los datos.
+    
     // Recupera el ID del producto de la URL
     const urlParams = new URLSearchParams(window.location.search);
     const productId = urlParams.get("id");
     if (productId) {
         // Recuperar los valores del formulario
-        const productName = document.getElementById("productName").value;
-        const productCode = document.getElementById("productCode").value;
-        const productDescription = document.getElementById("productDescription").value;
-        const productPrice = document.getElementById("productPrice").value;
-        const productQuantity = document.getElementById("productQuantity").value;
-        const branchId = document.getElementById("branchId").value;
+        const productName = document.getElementById("productNameInput").value;
+        const productCode = document.getElementById("productCodeInput").value;
+        const productDescription = document.getElementById("productDescriptionInput").value;
+        const productPrice = document.getElementById("productPriceInput").value;
+        const productQuantity = document.getElementById("productQuantityInput").value;
+        const branchId = document.getElementById("branchIdInput").value;
+
 
         // Crear un objeto con los valores del formulario
-        const productData = {
+        const updatedProductData = {
             productName: productName,
             productCode: productCode,
             productDescription: productDescription,
@@ -73,14 +75,35 @@ function guardarCambios() {
             productQuantity: productQuantity,
             branchId: branchId
         };
-        fetch(`http://206.189.200.204:8080/api/v1/medicine/update/${productId}`)
-            .then(response => response.json())
-            .then(product => {
 
-            }).catch(error => {
-                console.error("Error al actualizar los detalles del producto: ", error);
-            });
-        console.log(productData);
+        console.log(updatedProductData)
+        console.log("")
+        // URL de la API para actualizar el producto
+        const apiUrl = `http://206.189.200.204:8080/api/v1/medicine/update/${productId}`;
+
+        // Configuración de la solicitud
+        const requestOptions = {
+            method: 'PUT', // Utiliza el método PUT para actualizar datos
+            headers: {
+            'Content-Type': 'application/json', // Tipo de contenido de la solicitud
+            },
+            body: JSON.stringify(updatedProductData), // Convierte los datos a formato JSON
+        };
+
+        // Realiza la solicitud para actualizar el producto
+        fetch(apiUrl, requestOptions)
+        .then(response => {
+        if (response.status === 200) {
+            // El producto se actualizó exitosamente
+            console.log('Producto actualizado con éxito.');
+        } else {
+            // Hubo un error al actualizar el producto
+            console.error('Error al actualizar el producto.');
+        }
+        })
+        .catch(error => {
+        console.error('Error en la solicitud: ', error);
+        });
 
 
 

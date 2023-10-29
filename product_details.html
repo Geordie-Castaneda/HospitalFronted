@@ -130,36 +130,36 @@
                 <form id="productForm">
                     <div class="form-group">
                         <label for="productName">Nombre del Producto:</label>
-                        <input type="text" class="form-control" id="productName" name="productName" required>
+                        <input type="text" class="form-control" id="productNameInput" name="productName" required>
                     </div>
                     <div class="form-group">
                         <label for="productCode">Código:</label>
-                        <input type="text" class="form-control" id="productCode" name="productCode" required>
+                        <input type="text" class="form-control" id="productCodeInput" name="productCode" required>
                     </div>
                     <div class="form-group">
                         <label for="productDescription">Descripción:</label>
-                        <textarea class="form-control" id="productDescription" name="productDescription" required></textarea>
+                        <textarea class="form-control" id="productDescriptionInput" name="productDescription" required></textarea>
                     </div>
                     <div class="form-group">
                         <label for="productPrice">Precio:</label>
-                        <input type="text" class="form-control" id="productPrice" name="productPrice" required>
+                        <input type="number" class="form-control" id="productPriceInput" name="productPrice" required>
                     </div>
                     <div class="form-group">
                         <label for="productQuantity">Cantidad Disponible:</label>
-                        <input type="text" class="form-control" id="productQuantity" name="productQuantity" required>
+                        <input type="number" class="form-control" id="productQuantityInput" name="productQuantity" required>
                     </div>
                     <div class="form-group">
                         <label for="branchId">ID de Sucursal:</label>
-                        <input type="text" class="form-control" id="branchId" name="branchId" required>
+                        <input type="number" class="form-control" id="branchIdInput" name="branchId" required>
                     </div>
                 </form>
-                
+            
                 <div class="text-center">
                     <button id="saveButton" onclick="guardarCambios()" class="btn btn-success" style="display:none;">Guardar</button>
                     <button id="cancelButton" onclick="mostrarTabla()" type="button" class="btn btn-secondary">Cancelar</button>
                 </div>
-            
             </div>
+            
             
             
 
