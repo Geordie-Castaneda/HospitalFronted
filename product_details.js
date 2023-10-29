@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 document.getElementById("productName").textContent = product.name;
                 document.getElementById("productCode").textContent = product.code;
                 document.getElementById("productDescription").textContent = product.description;
-                document.getElementById("productPrice").textContent = `$${product.price.toFixed(2)}`;
+                document.getElementById("productPrice").textContent = `Q${product.price.toFixed(2)}`;
                 document.getElementById("productQuantity").textContent = `${product.quantity} unidades`;
                 document.getElementById("branchId").textContent = product.branchId;
 
@@ -52,6 +52,39 @@ function mostrarFormulario() {
 function guardarCambios() {
     // Aquí puedes implementar la lógica para guardar los cambios y luego mostrar la tabla nuevamente.
     // Por ejemplo, puedes enviar una solicitud al servidor para actualizar los datos.
+    // Recupera el ID del producto de la URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const productId = urlParams.get("id");
+    if (productId) {
+        // Recuperar los valores del formulario
+        const productName = document.getElementById("productName").value;
+        const productCode = document.getElementById("productCode").value;
+        const productDescription = document.getElementById("productDescription").value;
+        const productPrice = document.getElementById("productPrice").value;
+        const productQuantity = document.getElementById("productQuantity").value;
+        const branchId = document.getElementById("branchId").value;
+
+        // Crear un objeto con los valores del formulario
+        const productData = {
+            productName: productName,
+            productCode: productCode,
+            productDescription: productDescription,
+            productPrice: productPrice,
+            productQuantity: productQuantity,
+            branchId: branchId
+        };
+        fetch(`http://206.189.200.204:8080/api/v1/medicine/update/${productId}`)
+            .then(response => response.json())
+            .then(product => {
+
+            }).catch(error => {
+                console.error("Error al actualizar los detalles del producto: ", error);
+            });
+        console.log(productData);
+
+
+
+    }
     
     // Después de guardar los cambios, muestra la tabla y oculta el formulario.
     mostrarTabla();
